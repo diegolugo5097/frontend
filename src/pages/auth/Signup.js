@@ -55,8 +55,8 @@ const Signup = () => {
               <div className="card-body mt-5 py-5">
                 <form className="form" role="form" autocomplete="off">
                   <div className="form-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
+                    <div className="input-group-prepend">
+                      <div className="input-group-text">
                         <li className="fas fa-address-card"></li>
                       </div>
                       <input
@@ -71,8 +71,8 @@ const Signup = () => {
                   </div>
 
                   <div className="form-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
+                    <div className="input-group-prepend">
+                      <div className="input-group-text">
                         <li className="fas fa-user"></li>
                       </div>
                       <input
@@ -86,8 +86,8 @@ const Signup = () => {
                     </div>
                   </div>
                   <div className="form-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
+                    <div className="input-group-prepend">
+                      <div className="input-group-text">
                         <li className="fas fa-at"></li>
                       </div>
                       <input
@@ -102,8 +102,8 @@ const Signup = () => {
                     </div>
                   </div>
                   <div className="form-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
+                    <div className="input-group-prepend">
+                      <div className="input-group-text">
                         <li className="fas fa-key"></li>
                       </div>
                       <input

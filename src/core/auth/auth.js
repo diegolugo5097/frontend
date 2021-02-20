@@ -17,6 +17,16 @@ export const signin = (user) => {
     });
 };
 
+export const getUsers = () => {
+  return fetch(`${API}/auth/users`, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
 export const signup = (user) => {
   return fetch(`${API}/auth/signup`, {
     method: "POST",

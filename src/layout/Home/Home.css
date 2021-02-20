@@ -21,3 +21,8 @@ hr.sep-2 {
   text-align: center;
   margin: auto;
 }
+
+.about {
+  text-align: center;
+  font-family: "Julius Sans One", sans-serif, bold;
+}

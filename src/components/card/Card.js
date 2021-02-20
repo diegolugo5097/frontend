@@ -13,7 +13,7 @@ const Card = ({ product }) => {
   };
 
   return (
-    <div>
+    <>
       <div className="card border-dark" style={{ maxWidth: "18rem" }}>
         <ShowImage className="img" item={product} url="product" />
         <div className="card-body">
@@ -24,7 +24,7 @@ const Card = ({ product }) => {
           </a>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

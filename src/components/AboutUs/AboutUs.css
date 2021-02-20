@@ -1,0 +1,11 @@
+hr .sep-3 {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    #ffee00,
+    #0400ff,
+    #ff0000,
+    #ffee00
+  );
+}

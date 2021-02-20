@@ -55,16 +55,16 @@ const Signin = () => {
           <div className="container mt-5">
             <form>
               <div className="mt-5 mb-3">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <div className="input-group-text">
                       <li className="fas fa-at"></li>
                     </div>
                   </div>
                   <input
                     onChange={handleChange("email")}
                     type="email"
-                    class="form-control"
+                    className="form-control"
                     id="inlineFormInputGroupUsername"
                     placeholder="Correo Electronico"
                     value={email}
@@ -72,16 +72,16 @@ const Signin = () => {
                 </div>
               </div>
 
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <div className="input-group-text">
                     <li className="fas fa-key"></li>
                   </div>
                 </div>
                 <input
                   onChange={handleChange("password")}
                   type="password"
-                  class="form-control"
+                  className="form-control"
                   id="inlineFormInputGroupUsername"
                   placeholder="Contraseña"
                   value={password}
@@ -102,7 +102,7 @@ const Signin = () => {
 
   const redirectUser = () => {
     if (redirectToReferrer) {
-      if (user && user.rol === 1) {
+      if (user && user.role === 1) {
         return <Redirect to="/admin/dashboard" />;
       } else {
         return <Redirect to="/" />;

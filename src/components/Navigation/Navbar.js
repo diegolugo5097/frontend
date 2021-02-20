@@ -3,14 +3,15 @@ import { Link, withRouter } from "react-router-dom";
 import { NavItem } from "reactstrap";
 import { isAuthenticated, signout } from "../../core/auth/auth";
 import "./Navbar.css";
+import DashProduct from "../../pages/Admin/DashProduct/Product";
 
-const isActive = (history, path) => {
-  if (history.location.pathname === path) {
-    return { color: "#ff9900" };
-  } else {
-    return { color: "#ffffff" };
-  }
-};
+// const isActive = (history, path) => {
+//   if (history.location.pathname === path) {
+//     return { color: "#ff9900" };
+//   } else {
+//     return { color: "#ffffff" };
+//   }
+// };
 
 const Navigate = ({ history }) => {
   return (
@@ -65,6 +66,26 @@ const Navigate = ({ history }) => {
               )}
               {isAuthenticated() && (
                 <>
+                  <NavItem className="nav-link">
+                    <Link to="/dashboard/product" className="text-white">
+                      Productos
+                    </Link>
+                  </NavItem>
+                  <NavItem className="nav-link">
+                    <Link to="/dashboard/category" className="text-white">
+                      Categorias
+                    </Link>
+                  </NavItem>
+                  <NavItem className="nav-link">
+                    <Link to="/dashboard/about" className="text-white">
+                      Nosotros
+                    </Link>
+                  </NavItem>
+                  <NavItem className="nav-link">
+                    <Link to="/dashboard/users" className="text-white">
+                      Usuarios
+                    </Link>
+                  </NavItem>
                   <NavItem className="nav-link">
                     <Link
                       to="/"
