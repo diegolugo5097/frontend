@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import ShowImage from "./ShowImage";
 
 const Card = ({ product }) => {
-  const [count, setCount] = useState(product.count);
-
   /**
    * Function is responsible for cutting text of the description of the products
    * @param {str} str Product description text
