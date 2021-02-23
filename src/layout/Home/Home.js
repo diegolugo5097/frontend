@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Navigate from "../../components/Navigation/Navbar";
-import { getProducts } from "../../core/products/product";
+import { fetchProducts } from "../../api/products/product";
 import Card from "../../components/Card/Card";
 import Banner from "../../components/Banner/Banner";
-import AboutUs from "../../components/AboutUs/AboutUs";
-import { getAbout } from "../../core/aboutUs/about";
 import "./Home.css";
+import { useSelector } from "react-redux";
 
 const Home = (req, res) => {
   // function load state
@@ -13,8 +12,10 @@ const Home = (req, res) => {
   const [about, setAbout] = useState([]);
   const [error, setError] = useState([]);
 
+  const products = useSelector((state) => state.products);
+
   const loadProducts = () => {
-    getProducts().then((data) => {
+    fetchProducts().then((data) => {
       if (data.error) {
         setError(data.error);
       } else {
@@ -23,19 +24,19 @@ const Home = (req, res) => {
     });
   };
 
-  const loadAbout = () => {
-    getAbout().then((data) => {
-      if (data.error) {
-        setError(data.error);
-      } else {
-        setAbout(data);
-      }
-    });
-  };
+  // const loadAbout = () => {
+  //   getAbout().then((data) => {
+  //     if (data.error) {
+  //       setError(data.error);
+  //     } else {
+  //       setAbout(data);
+  //     }
+  //   });
+  // };
 
   useEffect(() => {
     loadProducts();
-    loadAbout();
+    // loadAbout();
   }, []);
 
   // function load api
@@ -52,7 +53,7 @@ const Home = (req, res) => {
           </div>
           <div className="card-deck">
             <div className="row d-flex justify-content-center">
-              {product.map((product, i) => (
+              {products.map((product, i) => (
                 <div key={i} className="mt-4">
                   <Card product={product} />
                 </div>
@@ -65,13 +66,13 @@ const Home = (req, res) => {
             <hr className="sep-2" />
           </div>
           <div>
-            <div className="about justify-content-center text-white">
+            {/* <div className="about justify-content-center text-white">
               {about.map((about, i) => (
                 <div key={i} className="mt-4">
                   <AboutUs about={about} />
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

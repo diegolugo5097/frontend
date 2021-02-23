@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { signup } from "../../core/auth/auth";
+import { signup } from "../../api/auth/auth";
 
 const Signup = () => {
   const [values, setValues] = useState({

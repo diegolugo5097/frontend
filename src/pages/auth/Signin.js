@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Signin.css";
-import { signin, authenticate, isAuthenticated } from "../../core/auth/auth";
+import { signin, authenticate, isAuthenticated } from "../../api/auth/auth";
 import { Redirect } from "react-router-dom";
 
 const Signin = () => {

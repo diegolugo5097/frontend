@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import ShowImage from "./ShowImage";
+import React from "react";
 
 const Card = ({ product }) => {
   /**
@@ -13,7 +12,7 @@ const Card = ({ product }) => {
   return (
     <>
       <div className="card border-dark" style={{ maxWidth: "18rem" }}>
-        <ShowImage className="img" item={product} url="product" />
+        <img className="img-top" src={product.image} />
         <div className="card-body">
           <h5 className="card-title">{product.name}</h5>
           <p className="card-text">{truncate(product.description)}</p>

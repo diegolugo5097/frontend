@@ -1,17 +1,8 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { NavItem } from "reactstrap";
-import { isAuthenticated, signout } from "../../core/auth/auth";
+import { isAuthenticated, signout } from "../../api/auth/auth";
 import "./Navbar.css";
-import DashProduct from "../../pages/Admin/DashProduct/Product";
-
-// const isActive = (history, path) => {
-//   if (history.location.pathname === path) {
-//     return { color: "#ff9900" };
-//   } else {
-//     return { color: "#ffffff" };
-//   }
-// };
 
 const Navigate = ({ history }) => {
   return (
