@@ -12,27 +12,15 @@ const Home = (req, res) => {
   const [about, setAbout] = useState([]);
   const [error, setError] = useState([]);
 
-  const products = useSelector((state) => state.products);
-
   const loadProducts = () => {
     fetchProducts().then((data) => {
       if (data.error) {
         setError(data.error);
       } else {
-        setProducts(data);
+        setProducts(data.data);
       }
     });
   };
-
-  // const loadAbout = () => {
-  //   getAbout().then((data) => {
-  //     if (data.error) {
-  //       setError(data.error);
-  //     } else {
-  //       setAbout(data);
-  //     }
-  //   });
-  // };
 
   useEffect(() => {
     loadProducts();
@@ -53,7 +41,7 @@ const Home = (req, res) => {
           </div>
           <div className="card-deck">
             <div className="row d-flex justify-content-center">
-              {products.map((product, i) => (
+              {product.map((product, i) => (
                 <div key={i} className="mt-4">
                   <Card product={product} />
                 </div>
