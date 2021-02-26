@@ -1,4 +1,4 @@
 import { API } from "../../config";
 import axios from "axios";
 
-export const sendEmail = () => axios.get(`${API}/send-email`);
+export const sendEmail = () => axios.post(`${API}/send-email`);

@@ -33,7 +33,11 @@ const Detail = (props) => {
             <p className="title-products">{product.description}</p>
           </div>
           <div className="col-md-6">
-            <form action={`${API}/send-email`} method="GET">
+            <form
+              action={`${API}/send-email`}
+              method="POST"
+              enctype="multipart/form-data"
+            >
               <div className="card">
                 <div className="card-header title-products text-dark">
                   Envianos un correo con el diseño que deseas
