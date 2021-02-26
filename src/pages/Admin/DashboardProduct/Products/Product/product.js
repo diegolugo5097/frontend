@@ -27,13 +27,13 @@ const Product = ({ product, setCurrentId }) => {
                 className="btn btn-danger"
                 onClick={() => dispatch(deleteProduct(product._id))}
               >
-                Eliminar
+                <i class="fas fa-trash-alt"></i>
               </button>
               <button
                 className="btn btn-warning"
                 onClick={() => setCurrentId(product._id)}
               >
-                Editar
+                <i class="far fa-edit"></i>
               </button>
             </div>
           </td>

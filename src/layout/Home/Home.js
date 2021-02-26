@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Navigate from "../../components/Navigation/Navbar";
 import { fetchProducts } from "../../api/products/product";
+import { fetchAbouts } from "../../api/aboutUs/about";
 import Card from "../../components/Card/Card";
 import Banner from "../../components/Banner/Banner";
+import Abouts from "../../pages/Admin/DashboardAbout/index";
 import "./Home.css";
-import { useSelector } from "react-redux";
 
 const Home = (req, res) => {
   // function load state
@@ -22,9 +23,19 @@ const Home = (req, res) => {
     });
   };
 
+  const loadAbouts = () => {
+    fetchAbouts().then((data) => {
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setAbout(data.data);
+      }
+    });
+  };
+
   useEffect(() => {
     loadProducts();
-    // loadAbout();
+    loadAbouts();
   }, []);
 
   // function load api
@@ -54,13 +65,11 @@ const Home = (req, res) => {
             <hr className="sep-2" />
           </div>
           <div>
-            {/* <div className="about justify-content-center text-white">
-              {about.map((about, i) => (
-                <div key={i} className="mt-4">
-                  <AboutUs about={about} />
-                </div>
-              ))}
-            </div> */}
+            <div className="about justify-content-center text-white">
+              {about.map((about) => {
+                return <p>{about.description}</p>;
+              })}
+            </div>
           </div>
         </div>
       </div>

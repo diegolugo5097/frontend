@@ -4,7 +4,12 @@ import FileBase from "react-file-base64";
 
 import { createProduct, updateProduct } from "../../../../actions/products";
 
+import { fetchCategories } from "../../../../api/categories/category";
+
 const Form = ({ currentId, setCurrentId }) => {
+  const [category, setCategory] = useState([]);
+  const [error, setError] = useState([]);
+
   const [postData, setPostData] = useState({
     name: "",
     description: "",
@@ -18,9 +23,20 @@ const Form = ({ currentId, setCurrentId }) => {
     currentId ? state.products.find((p) => p._id === currentId) : null
   );
 
+  const loadCategories = () => {
+    fetchCategories().then((data) => {
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setCategory(data.data);
+      }
+    });
+  };
+
   const dispatch = useDispatch();
 
   useEffect(() => {
+    loadCategories();
     if (product) setPostData(product);
   }, [product]);
 
@@ -97,8 +113,9 @@ const Form = ({ currentId, setCurrentId }) => {
               }}
             >
               <option value="0">- Seleccione -</option>
-              <option value="1">Camisetas</option>
-              <option value="2">Cuadros</option>
+              {category.map((category) => {
+                return <option value={category._id}>{category.name}</option>;
+              })}
             </select>
           </div>
           <div className="form-group">
@@ -106,7 +123,7 @@ const Form = ({ currentId, setCurrentId }) => {
               name="quantity"
               type="number"
               value={postData.quantity}
-              placeholder="Precio"
+              placeholder="Cantidad"
               className="form-control"
               min="0"
               onChange={(e) =>
@@ -127,13 +144,13 @@ const Form = ({ currentId, setCurrentId }) => {
         <div className="card-footer">
           <div className="btn-group">
             <button
-              className={currentId ? "btn btn-secondary" : "btn btn-primary"}
+              className={currentId ? "btn btn-warning" : "btn btn-primary"}
               type="submit"
             >
               {currentId ? "Editar" : "Agregar"}
             </button>
             <button className="btn btn-danger col" type="submit">
-              limpiar
+              <i class="fas fa-broom"></i>
             </button>
           </div>
         </div>

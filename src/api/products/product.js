@@ -3,6 +3,8 @@ import axios from "axios";
 
 export const fetchProducts = async () => axios.get(`${API}/product/products`);
 
+export const read = async (id) => axios.get(`${API}/product/read/${id}`);
+
 export const createProduct = (newProduct) =>
   axios.post(`${API}/product/create`, newProduct);
 

@@ -5,8 +5,9 @@ import Signin from "./pages/auth/Signin";
 import Signup from "./pages/auth/Signup";
 import Dashboard from "./pages/Admin/Dasboard";
 import FormProduct from "./pages/Admin/DashboardProduct/index.js";
-// import DashCategory from "./pages/Admin/DashCategory/Category";
-// import DashAbout from "./pages/Admin/DashAbout/About";
+import FormCategory from "./pages/Admin/DashboardCategory/index.js";
+import FormAbout from "./pages/Admin/DashboardAbout/index.js";
+import Detail from "./layout/detail";
 // import DashUser from "./pages/Admin/DashUsers/Users";
 
 const Routes = () => {
@@ -18,9 +19,10 @@ const Routes = () => {
         <Route path="/signup" exact component={Signup} />
         <Route path="/admin/dashboard" exact component={Dashboard} />
         <Route path="/dashboard/product" exact component={FormProduct} />
-        {/* <Route path="/dashboard/category" exact component={DashCategory} />
-        <Route path="/dashboard/about" exact component={DashAbout} />
-        <Route path="/dashboard/users" exact component={DashUser} /> */}
+        <Route path="/dashboard/category" exact component={FormCategory} />
+        <Route path="/dashboard/about" exact component={FormAbout} />
+        <Route path="/product/read/:id" exact component={Detail} />
+        {/* <Route path="/dashboard/users" exact component={DashUser} /> */}
       </Switch>
     </BrowserRouter>
   );
