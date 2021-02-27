@@ -12,13 +12,13 @@ const Card = ({ product }) => {
 
   return (
     <>
-      <div className="card border-dark" style={{ maxWidth: "18rem" }}>
+      <div className="card" style={{ maxWidth: "18rem" }}>
         <img className="img-top" src={product.image} />
         <div className="card-body">
           <h5 className="card-title">{product.name}</h5>
           <p className="card-text">{truncate(product.description)}</p>
           <Link to={`/product/read/${product._id}`}>
-            <button className="btn btn-primary col">ver mas</button>
+            <button className="btn btn-outline-primary col">ver mas</button>
           </Link>
         </div>
       </div>

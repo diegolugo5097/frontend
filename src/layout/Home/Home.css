@@ -1,19 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
 .title-products {
   font-family: "Julius Sans One", sans-serif, bold;
-  color: white;
-}
-
-hr.sep-2 {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(
-    to right,
-    #ffee00,
-    #0400ff,
-    #ff0000,
-    #ffee00
-  );
 }
 
 .card {
