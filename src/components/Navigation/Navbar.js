@@ -39,6 +39,54 @@ const Navigate = ({ history }) => {
               <Link className="text-white">
                 <i className="fab fa-instagram"></i>
               </Link>
+
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
+                <ul className="navbar-nav mx-auto">
+                  <li className="nav-item active"></li>
+                </ul>
+                <div className="form-inline d-flex justify-content-center">
+                  {isAuthenticated() && (
+                    <>
+                      <NavItem className="nav-link">
+                        <Link to="/dashboard/product" className="text-white">
+                          Productos
+                        </Link>
+                      </NavItem>
+                      <NavItem className="nav-link">
+                        <Link to="/dashboard/category" className="text-white">
+                          Categorias
+                        </Link>
+                      </NavItem>
+                      <NavItem className="nav-link">
+                        <Link to="/dashboard/about" className="text-white">
+                          Nosotros
+                        </Link>
+                      </NavItem>
+                      <NavItem className="nav-link">
+                        <Link to="/dashboard/users" className="text-white">
+                          Usuarios
+                        </Link>
+                      </NavItem>
+                      <NavItem className="nav-link">
+                        <Link
+                          to="/"
+                          onClick={() =>
+                            signout(() => {
+                              history.push("/");
+                            })
+                          }
+                          className="nav-link text-white btn btn-danger"
+                        >
+                          <i className="fas fa-times-circle mx-2"></i>
+                        </Link>
+                      </NavItem>
+                    </>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>
